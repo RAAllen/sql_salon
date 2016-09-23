@@ -27,27 +27,57 @@
 
     function save()
     {
-
+      $GLOBALS['DB']->exec("INSERT INTO stylists (name) VALUES ('{$this->getName()}');");
+      $this->id = $GLOBALS['DB']->lastInsertId();
     }
 
     function getAll()
     {
-
+      $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM stylists;");
+      $stylists = array();
+      foreach($returned_stylists as $stylist)
+      {
+        $name = $stylist['name'];
+        $id = $stylist['id'];
+        $new_stylist = new Stylist($name, $id);
+        array_push($stylists, $new_stylist);
+      }
+      return $stylists;
     }
 
-    function deleteAll()
+    static function deleteAll()
     {
-
+      $GLOBALS['DB']->exec("DELETE FROM stylists;");
     }
 
-    function find()
+    static function find($search_id)
     {
-
+      $found_stylist = null;
+      $stylists = Stylist::getAll();
+      foreach($stylists as $stylist)
+      {
+        $stylist_id = $stylist->getId();
+        if ($stylist_id == $search_id)
+        {
+          $found_task = $task;
+        }
+      }
+      return $found_task;
     }
 
     function getClients()
     {
-      
+      $clients = array();
+      $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients WHERE stylist_id = {this->getId()};");
+      foreach($returned_clients as $client)
+      {
+        $name = $client['name'];
+        $id = $client['id'];
+        $stylist_id = $client['id'];
+        $new_client = new Client($name, $stylist_id, $id);
+        array_push($clients, $new_client);
+      }
+      return $clients;
     }
   }
 ?>
