@@ -5,7 +5,7 @@
   require_once(__DIR__.'/../src/Stylist.php');
   date_default_timezone_set('America/New_York');
 
-  $server = 'mysql:host=localhost:8889;dbname=foodlr';
+  $server = 'mysql:host=localhost; db-name=salon_db';
   $username = 'root';
   $password = 'root';
   $DB = new PDO($server, $username, $password);
