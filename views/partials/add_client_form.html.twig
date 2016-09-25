@@ -1,0 +1,17 @@
+<form action="/results" method="post">
+  <div class="form-group">
+    <label for="add-client">Add a client to a stylist:</label>
+    <input class="form-control" name="add-client" type="text" placeholder="Brenda Buzzcut">
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn-btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Action<span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      {% for stylist in stylists %}
+        <li>{{ stylist.name }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <button type="submit" name="form-submit" class="btn btn-warning btn-block">Click to add!</button>
+</form>

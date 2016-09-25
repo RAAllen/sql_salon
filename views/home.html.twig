@@ -20,11 +20,19 @@
 
         <div class="col-xs-8">
           <div class="panel panel-primary">
-            <div class="panel-heading">Search the database:
+            <div class="panel-heading">Welcome to your SQL Salon Manager!
             </div>
             <div class="panel-body">
-              {% include "partials/search_clients_form.html" %}
-              {% include "partials/search_stylist_form.html" %}
+              <p>Designed to easily manage your team of stylists and ensure you can properly maintain their clientele base.There is a built in database that allows you to easily add new clients and new stylists and pair them up. It also allows you to clear out the database at a moments notice in case that becomes necessary. For assistance click the link below:</p>
+              <button class="btn btn-success btn-lg"><a href="https://github.com/RAAllen/sql_salon"></a></button>
+              <div class="row">
+                <div class="col-xs-4">
+                  {% include "partials/search_clients_form.html" %}
+                </div>
+                <div class="col-xs-4">
+                  {% include "partials/search_stylists_form.html" %}
+                </div>
+              </div>
             </div>
           </div>
         </div>

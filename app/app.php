@@ -21,5 +21,12 @@
       return $app['twig']->render('home.html.twig', array('all_clients' => $clients, 'all_stylists' => $stylists));
     });
 
+  // $app->post("/results", function() use ($app)
+  // {
+  //   $client_name = $_POST['user-client'];
+  //   $new_client = new Client($client_name);
+  //   $new_client->save();
+  // });
+
   return $app;
 ?>
