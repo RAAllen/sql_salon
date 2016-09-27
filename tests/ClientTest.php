@@ -103,25 +103,25 @@
         $this->assertEquals($stylist_id, $result);
       }
 
-    // function test_getStylistName()
-    // {
-    //   //Arrange
-    //   $stylist_name = "Betty Braider";
-    //   $new_stylist = new Stylist($stylist_name);
-    //   $new_stylist->save();
-    //   $stylist_id = $new_stylist->getId();
-    //   $stylist_name = $new_stylist->getName();
-    //
-    //   $name = "Sally Splitends";
-    //   $new_client = new Client($name, $stylist_id);
-    //   $new_client->save();
-    //
-    //   $expected_output = $stylist_name;
-    //   //Act
-    //   $result = $new_client->getStylistId();
-    //   //Assert
-    //   $this->assertEquals($expected_output, $result);
-    // }
+    function test_getStylistName()
+    {
+      //Arrange
+      $stylist_name = "Betty Braider";
+      $new_stylist = new Stylist($stylist_name);
+      $new_stylist->save();
+      $stylist_id = $new_stylist->getId();
+      $stylist_name = $new_stylist->getName();
+
+      $name = "Sally Splitends";
+      $new_client = new Client($name, $stylist_id);
+      $new_client->save();
+
+      $expected_output = $stylist_name;
+      //Act
+      $result = $new_client->getStylistName();
+      //Assert
+      $this->assertEquals($expected_output, $result);
+    }
 
     function test_save()
       {

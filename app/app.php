@@ -14,17 +14,15 @@
 
   $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
 
-  // $app->get("/", function() use ($app)
-  //   {
-  //     return $app['twig']->render('home.html.twig');
-  //   });
+  $app->get("/", function() use ($app)
+    {
+      return $app['twig']->render('home.html.twig');
+    });
 
-  // $app->post("/results", function() use ($app)
-  // {
-  //   $client_name = $_POST['user-client'];
-  //   $new_client = new Client($client_name);
-  //   $new_client->save();
-  // });
+  $app->post("/results", function() use ($app)
+  {
+
+  });
 
   return $app;
 ?>

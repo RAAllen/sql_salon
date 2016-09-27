@@ -68,12 +68,12 @@
     function getClients()
     {
       $clients = array();
-      $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients WHERE stylist_id = {this->getId()};");
+      $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients WHERE stylist_id = {$this->getId()};");
       foreach($returned_clients as $client)
       {
         $name = $client['name'];
+        $stylist_id = $client['stylist_id'];
         $id = $client['id'];
-        $stylist_id = $client['id'];
         $new_client = new Client($name, $stylist_id, $id);
         array_push($clients, $new_client);
       }

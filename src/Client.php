@@ -38,13 +38,13 @@
       $this->stylist_id = (int) $new_stylist_id;
     }
 
-    // function getStylistName()
-    // {
-    //   $stylist_from_db = $GLOBALS['DB']->query("SELECT * FROM stylists WHERE id = {$this->getStylistId()};");
-    //   $stylist = $stylist_from_db->fetch();
-    //   $stylist_name = $stylist['name'];
-    //   return $stylist_name;
-    // }
+    function getStylistName()
+    {
+      $stylist_from_db = $GLOBALS['DB']->query("SELECT * FROM stylists WHERE id = {$this->getStylistId()};");
+      $stylist = $stylist_from_db->fetch();
+      $stylist_name = $stylist['name'];
+      return $stylist_name;
+    }
 
     function save()
     {
@@ -79,7 +79,7 @@
       foreach($clients as $client)
       {
         $client_id = $client->getId();
-        if ($task_id == $search_id)
+        if ($client_id == $search_id)
         {
           $found_client = $client;
         }
