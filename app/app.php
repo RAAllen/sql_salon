@@ -19,10 +19,10 @@
       return $app['twig']->render('home.html.twig');
     });
 
-  $app->post("/results", function() use ($app)
-  {
-
-  });
+  // $app->post("/results", function() use ($app)
+  // {
+  //
+  // });
 
   return $app;
 ?>

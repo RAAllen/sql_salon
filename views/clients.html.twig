@@ -11,11 +11,9 @@
       <div class="row">
         <div class="col-xs-2">
           <div class="list-group">
-          <a href="home.html.twig" class="list-group-item">Search</a>
+          <a href="home.html.twig" class="list-group-item">Home</a>
           <a href="clients.html.twig" class="list-group-item">Clients</a>
           <a href="stylists.html.twig" class="list-group-item">Stylists</a>
-          <a href="add_clients.html.twig" class="list-group-item">Add Clients</a>
-          <a href="add_stylists.html.twig" class="list-group-item">Add Stylists</a>
         </div>
 
         <div class="col-xs-5">
@@ -33,6 +31,13 @@
             </div>
             <div class="panel-body">
               {% include "partials/search_clients_form.html" %}
+            </div>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">Add a Client:
+            </div>
+            <div class="panel-body">
+              {% include "partials/add_client_form.html.twig" %}
             </div>
           </div>
         </div>
