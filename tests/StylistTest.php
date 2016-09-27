@@ -1,13 +1,13 @@
 <?php
   /**
-  *@backupGlobals disabled
-  *backupStaticAttributes disabled
+  * @backupGlobals disabled
+  * @backupStaticAttributes disabled
   */
 
   require_once 'src/Client.php';
   require_once 'src/Stylist.php';
 
-  $server = 'mysql:host=localhost; db-name=salon_test_db';
+  $server = 'mysql:host=localhost:8889; dbname=hair_salon_test';
   $username = 'root';
   $password = 'root';
   $DB = new PDO($server, $username, $password);
@@ -63,7 +63,7 @@
         $test_stylist = new Stylist($name);
         $test_stylist->save();
         //Act
-        $result = Cuisine::getAll();
+        $result = Stylist::getAll();
         //Assert
         $this->assertEquals($test_stylist, $result[0]);
       }
@@ -71,9 +71,9 @@
     function test_getAll()
       {
         //Arrange
-        $name1 = "Tanya Toweldry"
-        $name2 = "Mary Manicure"
-        $name3 = "Patty Perm"
+        $name1 = "Tanya Toweldry";
+        $name2 = "Mary Manicure";
+        $name3 = "Patty Perm";
         $test_stylist1 = new Stylist($name1);
         $test_stylist1->save();
         $test_stylist2 = new Stylist($name2);
@@ -89,9 +89,9 @@
     function test_deleteAll()
       {
         //Arrange
-        $name1 = "Tanya Toweldry"
-        $name2 = "Mary Manicure"
-        $name3 = "Patty Perm"
+        $name1 = "Tanya Toweldry";
+        $name2 = "Mary Manicure";
+        $name3 = "Patty Perm";
         $test_stylist1 = new Stylist($name1);
         $test_stylist1->save();
         $test_stylist2 = new Stylist($name2);
@@ -108,9 +108,9 @@
     function test_find()
       {
         //Arrange
-        $name1 = "Tanya Toweldry"
-        $name2 = "Mary Manicure"
-        $name3 = "Patty Perm"
+        $name1 = "Tanya Toweldry";
+        $name2 = "Mary Manicure";
+        $name3 = "Patty Perm";
         $test_stylist1 = new Stylist($name1);
         $test_stylist1->save();
         $test_stylist2 = new Stylist($name2);
@@ -126,8 +126,8 @@
     function test_getClients()
     {
       //Arrange
-      $name1 = "Tanya Toweldry"
-      $name2 = "Mary Manicure"
+      $name1 = "Tanya Toweldry";
+      $name2 = "Mary Manicure";
       $test_stylist1 = new Stylist($name1);
       $test_stylist1->save();
       $test_stylist1_id = $test_stylist1->getId();
