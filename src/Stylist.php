@@ -12,7 +12,7 @@
 
     function getId()
     {
-      return (int) $this->id;
+      return $this->id;
     }
 
     function getName()
@@ -59,10 +59,10 @@
         $stylist_id = $stylist->getId();
         if ($stylist_id == $search_id)
         {
-          $found_task = $task;
+          $found_stylist = $stylist;
         }
       }
-      return $found_task;
+      return $found_stylist;
     }
 
     function getClients()

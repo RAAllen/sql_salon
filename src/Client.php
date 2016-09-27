@@ -30,7 +30,7 @@
 
     function getStylistId()
     {
-      return (int) $this->stylist_id;
+      return $this->stylist_id;
     }
 
     function setStylistId($new_stylist_id)
@@ -38,13 +38,13 @@
       $this->stylist_id = (int) $new_stylist_id;
     }
 
-    function getStylistName()
-    {
-      $stylist_from_db = $GLOBALS['DB']->query("SELECT * FROM stylists WHERE id = {$this->getStylistId()};");
-      $stylist = $stylist_from_db->fetch();
-      $stylist_name = $stylist['name'];
-      return $stylist_name;
-    }
+    // function getStylistName()
+    // {
+    //   $stylist_from_db = $GLOBALS['DB']->query("SELECT * FROM stylists WHERE id = {$this->getStylistId()};");
+    //   $stylist = $stylist_from_db->fetch();
+    //   $stylist_name = $stylist['name'];
+    //   return $stylist_name;
+    // }
 
     function save()
     {
@@ -84,7 +84,7 @@
           $found_client = $client;
         }
       }
-      return $found_task;
+      return $found_client;
     }
   }
 ?>
