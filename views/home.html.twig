@@ -12,7 +12,8 @@
         <li role="presentation" class="active"><a href="home.html.twig">Home</a></li>
         <li role="presentation"><a href="clients.html.twig">Clients</a></li>
         <li role="presentation"><a href="stylists.html.twig">Stylists</a></li>
-        <li role="presentation"><a href="add_forms.html.twig">Add Forms</a></li>
+        <li role="presentation"><a href="add_client.html.twig">Add Client</a></li>
+        <li role="presentation"><a href="add_stylist.html.twig">Add Stylist</a></li>
       </ul>
 
       <div class="panel panel-primary">
@@ -21,14 +22,7 @@
         <div class="panel-body">
           <p>Designed to easily manage your team of stylists and ensure you can properly maintain their clientele base.There is a built in database that allows you to easily add new clients and new stylists and pair them up. It also allows you to clear out the database at a moments notice in case that becomes necessary. For assistance click the link below:</p>
           <button class="btn btn-warning btn-lg"><a href="https://github.com/RAAllen/sql_salon">Click me!</a></button>
-          <div class="row">
-            <div class="col-xs-6">
-              {% include "partials/add_client_form.html.twig" %}
-            </div>
-            <div id="second-add-form" class="col-xs-6">
-              {% include "partials/add_stylist_form.html" %}
-            </div>
-          </div>
+      
         </div>
       </div>
 
