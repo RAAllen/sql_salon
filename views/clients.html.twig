@@ -9,23 +9,30 @@
       </div>
 
       <div class="row">
+
         <div class="col-xs-2">
           <div class="list-group">
           <a href="home.html.twig" class="list-group-item">Home</a>
           <a href="clients.html.twig" class="list-group-item">Clients</a>
           <a href="stylists.html.twig" class="list-group-item">Stylists</a>
+          </div>
         </div>
 
         <div class="col-xs-5">
+          
           <div class="panel panel-primary">
             <div class="panel-heading">List of Clients:
             </div>
             <div class="panel-body">
 
+              <!-- insert list of clients here -->
+
             </div>
           </div>
         </div>
+
         <div class="col-xs-5">
+
           <div class="panel panel-primary">
             <div class="panel-heading">Search for Client:
             </div>
@@ -33,6 +40,7 @@
               {% include "partials/search_clients_form.html" %}
             </div>
           </div>
+
           <div class="panel panel-primary">
             <div class="panel-heading">Add a Client:
             </div>
@@ -40,7 +48,9 @@
               {% include "partials/add_client_form.html.twig" %}
             </div>
           </div>
+
         </div>
+
       </div>
 
     </div>
