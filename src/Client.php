@@ -38,18 +38,33 @@
       $this->stylist_id = (int) $new_stylist_id;
     }
 
-    function getStylistName()
-    {
-      $stylist_from_db = $GLOBALS['DB']->query("SELECT * FROM stylists WHERE id = {$this->getStylistId()};");
-      $stylist = $stylist_from_db->fetch();
-      $stylist_name = $stylist['name'];
-      return $stylist_name;
-    }
+    // function getStylistName()
+    // {
+    //   $stylist_from_db = $GLOBALS['DB']->query("SELECT * FROM stylists WHERE id == {$this->getStylistId()};");
+    //   $stylist = $stylist_from_db->fetch();
+    //   $stylist_name = $stylist->getName();
+    //   return $stylist_name;
+    // }
 
     function save()
     {
       $GLOBALS['DB']->exec("INSERT INTO clients (name, stylist_id) VALUES ('{$this->getName()}', {$this->getStylistId()});");
       $this->id = $GLOBALS['DB']->lastInsertId();
+    }
+
+    function updateName($new_name)
+    {
+      $GLOBALS['DB']->exec("UPDATE clients SET name = '{$new_name}' WHERE id = {$this->getId()};");
+    }
+
+    // function updateStylist($new_stylist_id)
+    // {
+    //   $GLOBALS['DB']->exec("UPDATE clients SET stylist_id = '{$new_id}' WHERE ")
+    // }
+
+    function delete()
+    {
+      $GLOBALS['DB']->exec("DELETE FROM clients WHERE id = {$this->getId()};");
     }
 
     static function getAll()

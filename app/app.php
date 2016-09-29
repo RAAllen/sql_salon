@@ -18,11 +18,6 @@
     {
       return $app['twig']->render('home.html.twig');
     });
-  //
-  // $app->get("/add_stylist", function() use ($app)
-  //   {
-  //     $
-  //   })
 
   $app->get("/clients", function() use ($app)
     {

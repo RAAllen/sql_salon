@@ -6,3 +6,7 @@ body {
 #second-add-form {
   float: right;
 }
+
+ul {
+  list-style: none;
+}
