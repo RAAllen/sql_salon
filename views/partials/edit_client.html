@@ -1,0 +1,20 @@
+<form action="/edit_client" method="post">
+  <div class="form-group">
+    <label for="edit-client">Edit the client's name:</label>
+    <input class="form-control" name="edit-client" type="text" placeholder="Brenda Buzzcut">
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn-btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Change their stylist:<span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      {% for stylist in stylists %}
+        <li>{{ stylist.name }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <button type="submit" name="form-submit" class="btn btn-primary btn-block">Click to update!</button>
+</form>
+<form action="/delete_client" method="post">
+  <button type="submit" name="form-submit" class="btn btn-primary btn-block">Or delete the client!</button>
+</form>
