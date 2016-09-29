@@ -8,33 +8,28 @@
         <h1>Salon Manager</h1>
       </div>
 
-      <ul class="nav nav-tabs nav-justified">
-        <li role="presentation"><a href="/">Home</a></li>
-        <li role="presentation" class="active"><a href="/clients">Clients</a></li>
-        <li role="presentation"><a href="/stylists">Stylists</a></li>
-      </ul>
+      <div class="panel with-nav-tabs panel-default">
 
-      <div class="row">
+        <div class="panel-heading">
+          <ul class="nav nav-tabs nav-justified">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/clients">Clients</a></li>
+            <li><a href="/stylists">Stylists</a></li>
+          </ul>
+        </div>
 
-        <div class="col-xs-6">
-          <div class="panel panel-primary">
-            <div class="panel-heading">List of Clients:
-            </div>
-            <div class="panel-body">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-6">
+              <h3>List of Clients:</h3>
               <ul>
                 {% for client in clients %}
-                  <li>{{ client.name|e }}</li>
+                  <li><a href="client/{{client.getId}}">{{ client.name|e }}</a></li>
                 {% endfor %}
               </ul>
             </div>
-          </div>
-        </div>
-
-        <div class="col-xs-6">
-          <div class="panel panel-primary">
-            <div class="panel-heading">New Clients:
-            </div>
-            <div class="panel-body">
+            <div class="col-xs-6">
+              <h3>New Clients:</h3>
               <p>Add new clients in the form to the right. In order to add a client, you must have a stylist to associate them with. If you do not have a stylist entered yet, please add them first.</p>
               {% include "partials/add_client_form.html.twig" %}
             </div>

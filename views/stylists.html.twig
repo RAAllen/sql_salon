@@ -8,35 +8,28 @@
         <h1>Salon Manager</h1>
       </div>
 
-      <ul class="nav nav-tabs nav-justified">
-        <li role="presentation"><a href="/">Home</a></li>
-        <li role="presentation"><a href="/clients">Clients</a></li>
-        <li role="presentation" class="active"><a href="/stylists">Stylists</a></li>
-      </ul>
+      <div class="panel with-nav-tabs panel-default">
 
-      <div class="row">
-
-        <div class="col-xs-6">
-          <div class="panel panel-primary">
-            <div class="panel-heading">List of Stylists:
-            </div>
-            <div class="panel-body">
-
-              <ul>
-                {% for stylist in stylists %}
-                  <li>{{ stylist.name|e }}</li>
-                {% endfor %}
-              </ul>
-
-            </div>
-          </div>
+        <div class="panel-heading">
+          <ul class="nav nav-tabs nav-justified">
+            <li role="presentation"><a href="/">Home</a></li>
+            <li role="presentation"><a href="/clients">Clients</a></li>
+            <li role="presentation" class="active"><a href="/stylists">Stylists</a></li>
+          </ul>
         </div>
 
-        <div class="col-xs-6">
-          <div class="panel panel-primary">
-            <div class="panel-heading">New Stylist:
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-6">
+              <h3>List of Stylists:</h3>
+              <ul>
+                {% for stylist in stylists %}
+                  <li><a href="client/{{stylist.getId}}">{{ stylist.name|e }}</a></li>
+                {% endfor %}
+              </ul>
             </div>
-            <div class="panel-body">
+            <div class="col-xs-6">
+              <h3>New Stylist:</h3>
               <p>Add new stylists in the form to the right.</p>
               {% include "partials/add_stylist_form.html" %}
             </div>

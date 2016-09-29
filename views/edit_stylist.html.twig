@@ -8,31 +8,33 @@
         <h1>Salon Manager</h1>
       </div>
 
-        <ul class="nav nav-tabs nav-justified">
-          <li role="presentation"><a href="/">Home</a></li>
-          <li role="presentation"><a href="/clients">Clients</a></li>
-          <li role="presentation" class="active"><a href="/stylists">Stylists</a></li>
-        </ul>
+      <div class="panel with-nav-tabs panel-primary">
 
-        <div class="panel panel-primary">
-          <div class="panel-heading">Welcome to your SQL Salon Manager!
-          </div>
-          <div class="panel-body">
-            <div class="row">
+        <div class="panel-heading">
+          <ul class="nav nav-tabs nav-justified">
+            <li><a href="/">Home</a></li>
+            <li><a href="/clients">Clients</a></li>
+            <li class="active"><a href="/stylists">Stylists</a></li>
+          </ul>
+        </div>
 
-              <div class="col-xs-6">
+        <div class="panel-body">
+          <h3>Welcome to your SQL Salon Manager!</h3>
+          <div class="row">
 
-                <!-- If there was a stylist entered last, display it here -->
+            <div class="col-xs-6">
 
-              </div>
+              <!-- If there was a stylist entered last, display it here -->
 
-              <div class="col-xs-6">
-                {% include "partials/edit_stylist.html" %}
-              </div>
+            </div>
 
+            <div class="col-xs-6">
+              {% include "partials/edit_stylist.html" %}
             </div>
           </div>
         </div>
+
+      </div>
 
     </div>
   </body>

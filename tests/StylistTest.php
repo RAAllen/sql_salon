@@ -68,6 +68,38 @@
         $this->assertEquals($test_stylist, $result[0]);
       }
 
+    function test_updateName()
+      {
+        //Arrange
+        $name = "Terry Trimmer";
+        $test_stylist = new Stylist($name);
+        $test_stylist->save();
+        $new_name = "Bruce Braider";
+        //Act
+        $test_stylist->updateName($new_name);
+        
+        //Assert
+        $this->assertEquals($new_name, $test_stylist->getName());
+      }
+
+    function test_delete()
+      {
+        //Arrange
+        $name1 = "Tanya Toweldry";
+        $name2 = "Mary Manicure";
+        $name3 = "Patty Perm";
+        $test_stylist1 = new Stylist($name1);
+        $test_stylist1->save();
+        $test_stylist2 = new Stylist($name2);
+        $test_stylist2->save();
+        $test_stylist3 = new Stylist($name3);
+        $test_stylist3->save();
+        //Act
+        $test_stylist2->delete();
+        //Assert
+        $this->assertEquals([$test_stylist1, $test_stylist3], Stylist::getAll());
+      }
+
     function test_getAll()
       {
         //Arrange

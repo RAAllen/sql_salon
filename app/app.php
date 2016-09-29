@@ -21,13 +21,18 @@
 
   $app->get("/clients", function() use ($app)
     {
-      return $app['twig']->render('clients.html.twig');
+      return $app['twig']->render('clients.html.twig', array('clients' => Client::getAll(), 'stylists' => Stylist::getAll()));
     });
 
   $app->get("/stylists", function() use ($app)
     {
-      return $app['twig']->render('stylists.html.twig');
+      return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
     });
+
+  // $app->post("/added_client", function() use ($app)
+  // {
+  //   return
+  // });
 
   return $app;
 ?>

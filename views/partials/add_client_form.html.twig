@@ -4,14 +4,14 @@
     <input class="form-control" name="add-client" type="text" placeholder="Brenda Buzzcut">
   </div>
   <div class="btn-group">
-    <button type="button" class="btn-btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Stylists<span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
       {% for stylist in stylists %}
-        <li>{{ stylist.name }}</li>
+        <li>{{ stylist.name|e }}</li>
       {% endfor %}
     </ul>
   </div>
-  <button type="submit" name="form-submit" class="btn btn-primary btn-block">Click to add!</button>
+  <button type="submit" name="form-submit">Click to add!</button>
 </form>

@@ -8,32 +8,33 @@
         <h1>Salon Manager</h1>
       </div>
 
-        <ul class="nav nav-tabs nav-justified">
-          <li role="presentation"><a href="/">Home</a></li>
-          <li role="presentation" class="active"><a href="/clients">Clients</a></li>
-          <li role="presentation"><a href="/stylists">Stylists</a></li>
-        </ul>
+      <div class="panel with-nav-tabs panel-primary">
 
-        <div class="panel panel-primary">
-          <div class="panel-heading">Welcome to your SQL Salon Manager!
-          </div>
-          <div class="panel-body">
-            <div class="row">
+        <div class="panel-heading">
+          <ul class="nav nav-tabs nav-justified">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/clients">Clients</a></li>
+            <li><a href="/stylists">Stylists</a></li>
+          </ul>
+        </div>
 
-              <div class="col-xs-6">
-                <p>Add new clients in the form to the right. In order to add a client, you must have a stylist to associate them with. If you do not have a stylist entered yet, please add them first.</p>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-6">
+              <h3>Welcome to your SQL Salon Manager!</h3>
+              <p>Add new clients in the form to the right. In order to add a client, you must have a stylist to associate them with. If you do not have a stylist entered yet, please add them first.</p>
 
-              <!-- If there was a client added last, display it here -->
+            <!-- If there was a client added last, display it here -->
 
-              </div>
+            </div>
 
-              <div class="col-xs-6">
-                {% include "partials/edit_client.html.twig" %}
-              </div>
-
+            <div class="col-xs-6">
+              {% include "partials/edit_client.html.twig" %}
             </div>
           </div>
         </div>
+
+      </div>
 
     </div>
   </body>

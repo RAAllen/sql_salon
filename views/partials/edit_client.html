@@ -4,7 +4,7 @@
     <input class="form-control" name="edit-client" type="text" placeholder="Brenda Buzzcut">
   </div>
   <div class="btn-group">
-    <button type="button" class="btn-btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Change their stylist:<span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
@@ -13,8 +13,8 @@
       {% endfor %}
     </ul>
   </div>
-  <button type="submit" name="form-submit" class="btn btn-primary btn-block">Click to update!</button>
+  <button type="submit" name="form-submit">Click to update!</button>
 </form>
 <form action="/delete_client" method="post">
-  <button type="submit" name="form-submit" class="btn btn-primary btn-block">Or delete the client!</button>
+  <button type="submit" name="form-submit">Or delete the client!</button>
 </form>
