@@ -8,12 +8,10 @@
         <h1>Salon Manager</h1>
       </div>
 
-      <ul class="nav nav-pills nav-justified">
-        <li role="presentation"><a href="home.html.twig">Home</a></li>
-        <li role="presentation"><a href="clients.html.twig" class="active">Clients</a></li>
-        <li role="presentation"><a href="stylists.html.twig">Stylists</a></li>
-        <li role="presentation"><a href="add_client.html.twig">Add Client</a></li>
-        <li role="presentation"><a href="add_stylist.html.twig">Add Stylist</a></li>
+      <ul class="nav nav-tabs nav-justified">
+        <li role="presentation"><a href="/">Home</a></li>
+        <li role="presentation" class="active"><a href="/clients">Clients</a></li>
+        <li role="presentation"><a href="/stylists">Stylists</a></li>
       </ul>
 
       <div class="row">
@@ -23,19 +21,22 @@
             <div class="panel-heading">List of Clients:
             </div>
             <div class="panel-body">
-
-              <!-- insert list of clients here -->
-
+              <ul>
+                {% for client in clients %}
+                  <li>{{ client.name|e }}</li>
+                {% endfor %}
+              </ul>
             </div>
           </div>
         </div>
 
         <div class="col-xs-6">
           <div class="panel panel-primary">
-            <div class="panel-heading">Search for Client:
+            <div class="panel-heading">New Clients:
             </div>
             <div class="panel-body">
-              {% include "partials/search_clients_form.html" %}
+              <p>Add new clients in the form to the right. In order to add a client, you must have a stylist to associate them with. If you do not have a stylist entered yet, please add them first.</p>
+              {% include "partials/add_client_form.html.twig" %}
             </div>
           </div>
         </div>

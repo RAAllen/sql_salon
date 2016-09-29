@@ -18,11 +18,21 @@
     {
       return $app['twig']->render('home.html.twig');
     });
-  // 
+  //
   // $app->get("/add_stylist", function() use ($app)
   //   {
   //     $
   //   })
+
+  $app->get("/clients", function() use ($app)
+    {
+      return $app['twig']->render('clients.html.twig');
+    });
+
+  $app->get("/stylists", function() use ($app)
+    {
+      return $app['twig']->render('stylists.html.twig');
+    });
 
   return $app;
 ?>
