@@ -23,13 +23,22 @@
           <div class="row">
 
             <div class="col-xs-6">
-
-              <!-- If there was a stylist entered last, display it here -->
-
+              <h3>Stylist: {{ stylist.getName }}</h3>
+              <h3>Client: {{ client.getName }}</h3>
+              <p>Edit the stylist in the form to the right.</p>
             </div>
 
             <div class="col-xs-6">
-              {% include "partials/edit_stylist.html" %}
+              <form action="/edit_stylist" method="post">
+                <div class="form-group">
+                  <label for="edit-stylist">Add a stylist to the salon:</label>
+                  <input class="form-control" name="edit-stylist" type="text" placeholder="Darren Dyes">
+                </div>
+                <button type="submit" name="form-submit">Click to update!</button>
+              </form>
+              <form action="/delete_stylist" method="post">
+                <button type="submit" name="form-submit">Or delete the stylist!</button>
+              </form>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@
 ## Setup/Installation requirements
 
 * _In order to utilize this project you will need a terminal application such as Terminal or Bash, a web browser such as Chrome or Firefox, PHP, MAMP, MySQL and the Composer application installed on your computer. If you want to additionally edit this program, you must have a text editor application such as Atom._
-* _Start by opening the terminal and typing the command "git clone https://github.com/RAAllen/php_word_finder.git" after navigating with the "cd" command to the location you would like the project to be cloned in to._
+* _Start by opening the terminal and typing the command "git clone https://github.com/RAAllen/sql_salon.git" after navigating with the "cd" command to the location you would like the project to be cloned in to._
 * _In the terminal application navigate to the project folder using the "cd" command, then type the command "composer install"._
 * _Next navigate to the web folder using the "cd" command._
 * _Sign in to the MySQL shell by typing "/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot"._

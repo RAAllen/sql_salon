@@ -22,14 +22,36 @@
           <div class="row">
             <div class="col-xs-6">
               <h3>Welcome to your SQL Salon Manager!</h3>
-              <p>Add new clients in the form to the right. In order to add a client, you must have a stylist to associate them with. If you do not have a stylist entered yet, please add them first.</p>
-
-            <!-- If there was a client added last, display it here -->
-
+                <h3>Client: {{ client.getName }}</h3>
+                <h3>Current Stylist:
+                {% for stylist in stylists where client.getStylistId == stylist.getId %}
+                  {{ stylist.getName }}
+                {% endfor %}
+                </h3>
+              <p>Edit the client in the form to the right. You must select a stylist to associate them with.</p>
             </div>
 
             <div class="col-xs-6">
-              {% include "partials/edit_client.html.twig" %}
+              <form action="/edited_client/{{ client.getId }}" method="post">
+                <input name="_method" type="hidden" value="patch">
+                <div class="form-group">
+                  <label for="edit-client">Edit the client's name:</label>
+                  <input class="form-control" name="edit-client" type="text" placeholder="{{ client.getName }}">
+                </div>
+                <label for="stylist_id">Select an existing stylist for the client:</label>
+                <select name="stylist_id" class="form-control">
+                    <option value="0"></option>
+                    {% for stylist in stylists %}
+                    <option value="{{stylist.getId}}">{{stylist.getName}}</option>
+                    {% endfor %}
+                </select>
+                <label for="new_stylist">Add a new stylist:</label>
+                <input name="new_stylist" class="form-control" value="">
+                <button type="submit" name="form-submit">Click to update!</button>
+              </form>
+              <form action="/delete_client" method="post">
+                <button type="submit" name="form-submit">Or delete the client!</button>
+              </form>
             </div>
           </div>
         </div>
