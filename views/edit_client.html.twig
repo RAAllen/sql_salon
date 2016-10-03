@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include "partials/header.html" %}
+  {% include "/partials/header.html" %}
   <body>
     <div class="container">
 
@@ -8,7 +8,7 @@
         <h1>Salon Manager</h1>
       </div>
 
-      <div class="panel with-nav-tabs panel-primary">
+      <div class="panel with-nav-tabs">
 
         <div class="panel-heading">
           <ul class="nav nav-tabs nav-justified">
@@ -24,9 +24,11 @@
               <h3>Welcome to your SQL Salon Manager!</h3>
                 <h3>Client: {{ client.getName }}</h3>
                 <h3>Current Stylist:
-                {% for stylist in stylists where client.getStylistId == stylist.getId %}
-                  {{ stylist.getName }}
-                {% endfor %}
+                  {% for stylist in stylists %}
+                    {% if client.getStylistId == stylist.getId %}
+                      <h3> {{ stylist.getName }}</h3>
+                    {% endif %}
+                  {% endfor %}
                 </h3>
               <p>Edit the client in the form to the right. You must select a stylist to associate them with.</p>
             </div>

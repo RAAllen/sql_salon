@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include "partials/header.html" %}
+  {% include "/partials/header.html" %}
   <body>
     <div class="container">
 
@@ -24,14 +24,20 @@
               <h3>List of Stylists:</h3>
               <ul>
                 {% for stylist in stylists %}
-                  <li><a href="client/{{stylist.getId}}">{{ stylist.name|e }}</a></li>
+                  <li><a href="/edit_stylist/{{stylist.getId}}">{{ stylist.name|e }}</a></li>
                 {% endfor %}
               </ul>
             </div>
             <div class="col-xs-6">
               <h3>New Stylist:</h3>
               <p>Add a new stylist in the form below.</p>
-              {% include "partials/add_stylist_form.html" %}
+              <form action="/added_stylist" method="post">
+                <div class="form-group">
+                  <label for="add-stylist">Add a stylist to the salon:</label>
+                  <input class="form-control" name="add-stylist" type="text" placeholder="Darren Dyes">
+                </div>
+                <button type="submit" name="form-submit">Click to add!</button>
+              </form>
             </div>
           </div>
         </div>

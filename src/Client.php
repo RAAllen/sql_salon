@@ -40,10 +40,24 @@
 
     // function getStylistName()
     // {
-    //   $stylist_from_db = $GLOBALS['DB']->query("SELECT * FROM stylists WHERE id == {$this->getStylistId()};");
-    //   $stylist = $stylist_from_db->fetch();
-    //   $stylist_name = $stylist->getName();
-    //   return $stylist_name;
+    //   $returned_stylists = $GLOBALS['DB']->query("SELECT  stylists.* FROM clients
+    //     JOIN stylists ON (stylists.id = clients.stylist_id)
+    //     JOIN clients ON (clients.stylist_id = stylist.id)
+    //     WHERE clients.stylist_id = {$this->getStylistId()};");
+    //   $stylists = array();
+    //   foreach ($returned_stylists as $stylist)
+    //   {
+    //     $id = $stylist['id'];
+    //     $name = $stylist['name'];
+    //     $new_stylist = new Stylist($name, $id);
+    //     array_push($authors, $new_stylist);
+    //   }
+    //   return $stylist->name;
+    // }
+
+    // function addStylist($new_stylist)
+    // {
+    //   $GLOBALS['DB']->exec("INSERT INTO clients (stylist_id) VALUES ({$new_stylist->getId()}");
     // }
 
     function save()

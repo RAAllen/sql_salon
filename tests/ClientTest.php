@@ -123,6 +123,22 @@
     //   $this->assertEquals($expected_output, $result);
     // }
 
+    // function test_addStylist()
+    // {
+    //   //Arrange
+    //   $client_name = "Nelly Needsacut";
+    //   $test_client = new Client($client_name);
+    //   $test_client->save();
+    //
+    //   $stylist_name = "Bob Bowlcutter";
+    //   $test_stylist = new Stylist($stylist_name);
+    //   $test_stylist->save();
+    //   //Act
+    //   $test_client->addStylist($test_stylist);
+    //   //Assert
+    //   $this->assertEquals([$test_stylist], $test_client->getStylist());
+    // }
+
     function test_save()
       {
         //Arrange
@@ -165,7 +181,7 @@
         $test_stylist = new Stylist($name);
         $test_stylist->save();
         $stylist_id = $test_stylist->getId();
-        
+
         $name1 = "Nelly Needsacut";
         $name2 = "Fran Frayedends";
         $name3 = "Calvin Combover";

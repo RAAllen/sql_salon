@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include "partials/header.html" %}
+  {% include "/partials/header.html" %}
   <body>
     <div class="container">
 
@@ -8,7 +8,7 @@
         <h1>Salon Manager</h1>
       </div>
 
-      <div class="panel with-nav-tabs panel-primary">
+      <div class="panel with-nav-tabs">
 
         <div class="panel-heading">
           <ul class="nav nav-tabs nav-justified">
@@ -26,18 +26,18 @@
               <h3>Stylist: {{ stylist.getName }}</h3>
               <h3>Client: {{ client.getName }}</h3>
               <p>Edit the stylist in the form to the right.</p>
+              <form action="/delete_stylist" method="post">
+                <button type="submit" name="form-submit">Or delete the stylist!</button>
+              </form>
             </div>
 
             <div class="col-xs-6">
-              <form action="/edit_stylist" method="post">
+              <form action="/edited_stylist" method="post">
                 <div class="form-group">
-                  <label for="edit-stylist">Add a stylist to the salon:</label>
+                  <label for="edit-stylist">Edit the stylist:</label>
                   <input class="form-control" name="edit-stylist" type="text" placeholder="Darren Dyes">
                 </div>
                 <button type="submit" name="form-submit">Click to update!</button>
-              </form>
-              <form action="/delete_stylist" method="post">
-                <button type="submit" name="form-submit">Or delete the stylist!</button>
               </form>
             </div>
           </div>

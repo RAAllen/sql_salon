@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include "partials/header.html" %}
+  {% include "/partials/header.html" %}
   <body>
     <div class="container">
 
@@ -24,14 +24,14 @@
               <h3>List of Clients:</h3>
               <ul>
                 {% for client in clients %}
-                  <li><a href="client/{{client.getId}}">{{ client.name|e }}</a></li>
+                  <li><a href="edit_client/{{client.getId}}">{{ client.getName }}</a></li>
                 {% endfor %}
               </ul>
             </div>
             <div class="col-xs-6">
               <h3>New Clients:</h3>
               <p>Add a new client in the form below.</p>
-              <form action="/added_client/{{ client.getId }}" method="post">
+              <form action="/added_client" method="post">
                 <div class="form-group">
                   <label for="add-client">Add the client's name:</label>
                   <input class="form-control" name="add-client" type="text" placeholder="Linda Longhair">
