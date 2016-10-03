@@ -38,9 +38,9 @@
                 </div>
                 <label for="stylist_id">Select an existing stylist for the client:</label>
                 <select name="stylist_id" class="form-control">
-                    <option value="0"></option>
+                    <option value="0">Stylists</option>
                     {% for stylist in stylists %}
-                    <option value="{{stylist.getId}}">{{stylist.getName}}</option>
+                    <li><option value="{{stylist.getId}}">{{stylist.getName}}</option></li>
                     {% endfor %}
                 </select>
                 <label for="new_stylist">Or add a new stylist:</label>
