@@ -13,20 +13,21 @@
         <div class="panel-heading">
           <ul class="nav nav-tabs nav-justified">
             <li><a href="/">Home</a></li>
-            <li class="active"><a href="/clients">Clients</a></li>
+            <li><a href="/clients">Clients</a></li>
             <li><a href="/stylists">Stylists</a></li>
+            <li class="active">Edit Client</li>
+            <li>Edit Stylist</li>
           </ul>
         </div>
 
         <div class="panel-body">
           <div class="row">
             <div class="col-xs-6">
-              <h3>Welcome to your SQL Salon Manager!</h3>
                 <h3>Client: {{ client.getName }}</h3>
                 <h3>Current Stylist:
                   {% for stylist in stylists %}
                     {% if client.getStylistId == stylist.getId %}
-                      <h3> {{ stylist.getName }}</h3>
+                      {{ stylist.getName }}
                     {% endif %}
                   {% endfor %}
                 </h3>

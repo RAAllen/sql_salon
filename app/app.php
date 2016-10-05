@@ -62,12 +62,12 @@
 
   $app->get("/edit_client/{id}", function($id) use ($app)
   {
-    return $app['twig']->render('edit_client.html.twig', array('clients' => Client::find($id), 'stylists' => Stylist::getAll()));
+    return $app['twig']->render('edit-client.html.twig', array('clients' => Client::find($id), 'stylists' => Stylist::getAll()));
   });
 
   $app->get("/edit_stylist/{id}", function($id) use ($app)
   {
-    return $app['twig']->render('edit_stylist.html.twig', array('stylists' => Stylist::find($id), 'clients' => Client::getAll()));
+    return $app['twig']->render('edit-stylist.html.twig', array('stylists' => Stylist::find($id), 'clients' => Client::getAll()));
   });
 
   $app->patch("/edited_client", function($id) use ($app)
