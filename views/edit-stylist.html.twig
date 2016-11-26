@@ -15,7 +15,6 @@
             <li><a href="/">Home</a></li>
             <li><a href="/clients">Clients</a></li>
             <li><a href="/stylists">Stylists</a></li>
-            <li>Edit Client</li>
             <li class="active">Edit Stylist</li>
           </ul>
         </div>
@@ -26,10 +25,7 @@
 
             <div class="col-xs-6">
               <h3>Stylist: {{ stylist.getName }}</h3>
-              <h3>Clients:</h3>
-              {% for client in clients %}
-                <li><a href="/edit_client/{{client.getId}}">{{ client.name|e }}</a></li>
-              {% endfor %}
+              <h3>Client: {{ client.getName }}</h3>
               <p>Edit the stylist in the form to the right.</p>
               <form action="/delete_stylist" method="post">
                 <button type="submit" name="form-submit">Or delete the stylist!</button>
