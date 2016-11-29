@@ -34,20 +34,16 @@
 
   $app->post("/added_client", function() use ($app)
   {
-    $new_client = new Client($_POST['add-client']);
-    $new_client->save();
     if ($_POST['new_stylist'] != '')
     {
-        $new_client = new Client($_POST['add-client']);
         $new_stylist = new Stylist($_POST['new_stylist']);
         $new_stylist->save();
-        $new_client->setStylistId($new_stylist->getId());
+        $new_client = new Client($_POST['add-client'], $new_stylist->getId());
         $new_client->save();
-    }
-    if ($_POST['stylist_id'] != "0")
-    {
-      $stylist = Stylist::find($_POST['stylist_id']);
-      $new_client->addStylist($stylist_id->getId());
+    } else {
+      // $stylist = Stylist::find($_POST['stylist_id']);
+      $new_client = new Client($_POST['add-client'], $_POST['stylist_id']);
+      // $new_client->addStylist($stylist_id->getId());
       $new_client->save();
     }
     return $app['twig']->render('clients.html.twig', array('clients' =>Client::getAll()));
