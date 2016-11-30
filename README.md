@@ -11,13 +11,12 @@
 * Start by opening the terminal and typing the command "git clone https://github.com/RAAllen/sql_salon.git" after navigating with the "cd" command to the location you would like the project to be cloned in to.
 * In the terminal application navigate to the project folder using the "cd" command, then type the command "composer install".
 * Launch the MAMP program and start its server, making sure the document root is set to the project folder in the Preferences>Web Server.
-* Next navigate to the web folder using the "cd" command.
-* Then launch a local server from within the web folder of the project directory using the "php -S localhost:8888" command. If you are already running a localhost you should simply alter the number 8888 to something like 8000.
 * You can sign in to the MySQL shell by typing "/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot".
 * While in the SQL shell you can import the database by typing "source hair_salon.sql" in the terminal.
-* Next switch to your web browser and navigate to the server localhost:8888 you just created. The program should now launch.
 * To test the application and make certain all the methods are passing use PHP Unit tests. First you must make a test copy of the database. In MAMP click the "Open start page" button, then the link for phpMyAdmin. Select the "hair_salon" database, go to the "Operations" tab and under "Copy database to" select "Structure only" and give it a name of "hair_salon_test". Then launch the tests by typing "./vendor/bin/phpunit tests" in the terminal from the project directory.
-
+* Next navigate to the web folder using the "cd" command.
+* Then launch a local server from within the web folder of the project directory using the "php -S localhost:8888" command. If you are already running a localhost you should simply alter the number 8888 to something like 8000.
+* Next switch to your web browser and navigate to the server localhost:8888 you just created. The program should now launch.
 
 ## Program Specifications
 

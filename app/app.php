@@ -41,9 +41,7 @@
         $new_client = new Client($_POST['add-client'], $new_stylist->getId());
         $new_client->save();
     } else {
-      // $stylist = Stylist::find($_POST['stylist_id']);
       $new_client = new Client($_POST['add-client'], $_POST['stylist_id']);
-      // $new_client->addStylist($stylist_id->getId());
       $new_client->save();
     }
     return $app['twig']->render('clients.html.twig', array('clients' =>Client::getAll()));
